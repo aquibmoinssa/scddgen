@@ -1,3 +1,4 @@
+gradio
 transformers
 torch
 scikit-learn
