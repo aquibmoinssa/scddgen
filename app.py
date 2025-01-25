@@ -425,5 +425,5 @@ iface = gr.Interface(
     title="ExosAI - NASA SMD SCDD AI Assistant [version-0.9a]",
     description="ExosAI is an AI-powered assistant for generating and visualising HWO Science Cases",
 )
-port = int(os.environ.get("PORT", 7860))
+port = int(os.environ.get("PORT", 10000))
 iface.launch(server_port=port, server_name="0.0.0.0")
