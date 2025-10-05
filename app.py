@@ -425,6 +425,11 @@ iface = gr.Interface(
     title="ExosAI - NASA SMD SCDD AI Assistant [version-0.9a]",
     description="ExosAI is an AI-powered assistant for generating and visualising HWO Science Cases",
 )
-port = int(os.getenv('GRADIO_SERVER_PORT'))
-server = os.getenv('GRADIO_SERVER_NAME')
-iface.launch(server_port=port, server_name=server)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", "10000"))  # Render sets PORT
+    iface.launch(
+        server_name="0.0.0.0",   # listen on all interfaces
+        server_port=port,        # bind to Render's assigned port
+        show_error=True
+    )
