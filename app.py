@@ -425,11 +425,8 @@ iface = gr.Interface(
     title="ExosAI - NASA SMD SCDD AI Assistant [version-0.9a]",
     description="ExosAI is an AI-powered assistant for generating and visualising HWO Science Cases",
 )
-if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", "10000"))  # Render sets PORT
-    iface.launch(
+iface.launch(
         server_name="0.0.0.0",   # listen on all interfaces
-        server_port=port,        # bind to Render's assigned port
+        server_port=10000,        # bind to Render's assigned port
         show_error=True
     )
