@@ -427,10 +427,5 @@ iface = gr.Interface(
 )
 if __name__ == "__main__":
     import os
-    g_server = os.getenv('GRADIO_SERVER_NAME')
-    g_port = os.getenv('GRADIO_SERVER_PORT')
-    iface.launch(
-        server_name=g_server,  
-        server_port=g_port,
-        show_error=True
-    )
+    port = int(os.environ.get('PORT', 7860))  
+    iface.launch(server_name="0.0.0.0", server_port=port)
